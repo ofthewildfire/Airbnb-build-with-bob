@@ -1,5 +1,4 @@
 export default function Card({ card }) {
-  console.log(card);
   // const imgValue = "./images/" + props.img;
   let badgeText;
   if (card.openSpots === 0) {
@@ -10,11 +9,6 @@ export default function Card({ card }) {
 
   return (
     <div className="card">
-      {/* <span className="badge">
-        {card.openSpots <= 0
-          ? "Sold Out"
-          : card.openSpots + " spots left" + " in " + card.location}
-      </span> */}
       {badgeText && <span className="badge">{badgeText}</span>}
       <img
         src={"./images/" + card.coverImg}
