@@ -1,14 +1,21 @@
 export default function Card({ card }) {
   console.log(card);
   // const imgValue = "./images/" + props.img;
+  let badgeText;
+  if (card.openSpots === 0) {
+    badgeText = "Sold Out";
+  } else if (card.location === "Online") {
+    badgeText = "Online";
+  }
+
   return (
     <div className="card">
-      <span className="badge">
+      {/* <span className="badge">
         {card.openSpots <= 0
           ? "Sold Out"
           : card.openSpots + " spots left" + " in " + card.location}
-      </span>
-      {/* <img src={imgValue} alt="Katie Zaferes" /> */}
+      </span> */}
+      {badgeText && <span className="badge">{badgeText}</span>}
       <img
         src={"./images/" + card.coverImg}
         alt="Katie Zaferes"
@@ -19,9 +26,9 @@ export default function Card({ card }) {
       <div className="card--text">
         <div className="card--rating">
           <img src="/images/star.png" alt="star image for rating" />
-          <span>{card.rating}</span>
+          <span>{card.stats.rating}</span>
           <span className="grey">
-            ({card.reviewCount}) - {card.country}
+            ({card.stats.reviewCount}) - {card.location}
           </span>
         </div>
         <div className="card--title">
