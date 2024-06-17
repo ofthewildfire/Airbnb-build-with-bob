@@ -11,21 +11,32 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Card from "./components/Card";
 import Footer from "./components/Footer";
+
+// Import data file
+import data from "./data";
+console.log(data);
+
 function App() {
+  const cards = data.map((card) => {
+    return (
+      <Card
+        key={card.id}
+        img={card.coverImg}
+        rating={card.stats.rating}
+        reviewCount={card.stats.reviewCount}
+        country={card.location}
+        title={card.title}
+        price={card.price}
+        openSpots={card.openSpots}
+      />
+    );
+  });
+
   return (
     <>
       <Navbar />
       <Hero />
-      <div className="card-container">
-        <Card
-          img="swimmer.png"
-          rating="5.0"
-          reviewCount={6}
-          country="USA"
-          title="Life Lessons with Katie Zaferes"
-          price={136}
-        />
-      </div>
+      <div className="card-container">{cards}</div>
       <Footer />
     </>
   );
