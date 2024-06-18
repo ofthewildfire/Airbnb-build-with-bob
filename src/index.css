@@ -135,7 +135,6 @@ nav > img {
   height: 21.875rem;
   object-fit: cover;
   border-radius: 10px;
-  object-position: center;
 }
 
 .price {

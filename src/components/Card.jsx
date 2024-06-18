@@ -1,5 +1,6 @@
-export default function Card({ card }) {
+export default function Card(card) {
   // const imgValue = "./images/" + props.img;
+  console.log(card);
   let badgeText;
   if (card.openSpots === 0) {
     badgeText = "Sold Out";

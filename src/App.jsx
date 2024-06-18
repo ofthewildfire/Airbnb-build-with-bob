@@ -14,11 +14,10 @@ import Footer from "./components/Footer";
 
 // Import data file
 import data from "./data";
-console.log(data);
 
 function App() {
   const cards = data.map((card) => {
-    return <Card key={card.id} card={card} />;
+    return <Card key={card.id} {...card} />;
   });
 
   return (
